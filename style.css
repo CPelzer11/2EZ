@@ -1,4 +1,26 @@
 body {
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    background-image: url(images/background.jpg);
 }
+
+#main {
+    background-color: gainsboro;
+    height: 600px;
+    
+}
+
+h1 {
+    text-align: center;
+}
+
+#greenFee {
+    float: right;
+    width: 25%;
+    height: 50%;
+}
+
+.login{
+    margin-top: 3%;
+}
+
