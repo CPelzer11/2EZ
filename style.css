@@ -139,3 +139,7 @@ h1 {
 .btn-scale-desc-1:hover {
   background-color: #DE0000;
 }
+
+#collapse1 {
+    width: 75%;
+}
