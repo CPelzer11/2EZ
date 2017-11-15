@@ -27,25 +27,16 @@
                     <div id="collapse1" class="panel-collapse collapse in">
                         <div class="panel-body">
                             what are we putting here.... 
-                            <div class="buttonContainer">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <p class="page-header">1 is bad, 10 is good</p>
-                                        <div class="chart-scale">
-                                        <button class="btn btn-scale btn-scale-desc-1">1</button>
-                                        <button class="btn btn-scale btn-scale-desc-2">2</button>
-                                        <button class="btn btn-scale btn-scale-desc-3">3</button>
-                                        <button class="btn btn-scale btn-scale-desc-4">4</button>
-                                        <button class="btn btn-scale btn-scale-desc-5">5</button>
-                                        <button class="btn btn-scale btn-scale-desc-6">6</button>
-                                        <button class="btn btn-scale btn-scale-desc-7">7</button>
-                                        <button class="btn btn-scale btn-scale-desc-8">8</button>
-                                        <button class="btn btn-scale btn-scale-desc-9">9</button>
-                                        <button class="btn btn-scale btn-scale-desc-10">10</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <br>
+                            <br>
+                            <input type="range" min="0" max="100" value="0" step="5" onchange="showValue(this.value)" />
+                            <span id="range">0</span>
+                            <script type="text/javascript">
+                                function showValue(newValue)
+                                {                                   
+                                    document.getElementById("range").innerHTML=newValue;
+                                }
+                            </script>
                         </div>
                 </div>
             <div class="panel panel-default">
