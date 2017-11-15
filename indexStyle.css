@@ -1,0 +1,11 @@
+body{
+	background-image: url('WSU_GreenFee.png');
+	background-size: 650px;
+	//background-size: 40%;
+	background-position: 90% -10%;
+	background-repeat: no-repeat;
+}
+
+nav, thead{
+	background-color: rgb(124, 164, 69);
+}
