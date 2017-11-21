@@ -1,5 +1,5 @@
 	<?php 
-		session_unset();
+		unset($_SESSION['failed']);
 		$dbconnect = mysqli_connect('localhost', 'Enter SQL Username Here', 'Enter SQL PW here','Enter DB name here');
 		$query = $dbconnect->prepare("SELECT u_name FROM user WHERE u_name=?");
 		$query->bind_param("s",$username);

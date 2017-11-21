@@ -29,8 +29,9 @@
             <?php session_start();?>
 				<p id="test"> 
 				<?php
+				session_destroy();
 				if(isset($_SESSION['failed'])){
-					echo $_SESSION['failed'];
+					print($_SESSION['failed']);
 				}
 				?>
 				</p>
