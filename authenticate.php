@@ -12,7 +12,7 @@
 		}
 		else{
 			session_start();
-		//	$_SESSION['failed']="Invalid Credentials";
+			$_SESSION['failed']="Invalid Credentials";
 			header("Location: login.php");
 		}
 		$query->close();
