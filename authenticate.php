@@ -1,5 +1,6 @@
 	<?php 
-		$dbconnect = mysqli_connect('localhost', 'insert SQL Username Here', 'insert SQL PW here','Insert DB name here');
+		session_unset();
+		$dbconnect = mysqli_connect('localhost', 'Enter SQL Username Here', 'Enter SQL PW here','Enter DB name here');
 		$query = $dbconnect->prepare("SELECT u_name FROM user WHERE u_name=?");
 		$query->bind_param("s",$username);
 		$username=$_POST["username"];
@@ -10,7 +11,9 @@
 			header("Location: index.html");
 		}
 		else{
-			header("Location: login.html");
+			session_start();
+		//	$_SESSION['failed']="Invalid Credentials";
+			header("Location: login.php");
 		}
 		$query->close();
 	?>
