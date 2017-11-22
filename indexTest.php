@@ -59,59 +59,38 @@
               </thead>
               <tbody id="myTable">
                 <?php
-                  $file_handle = fopen("DB.txt", "r");
-                  while(!feof($file_handle)){
-                    $line_of_text = fgets($file_handle);
-                    $parts = explode(':', $line_of_text);
+                  $file = fopen("DB.txt", "r");
+                  $count = 0;
+                  while(!feof($file)){
+                    $inform = fgets($file);
+                    $count++;
+                    list($title, $date, $submit) = explode(':', $inform);
                     ?>
                     <tr>
-                      <td><?= $parts[0] ?></td>
-                      <td><?= $parts[1] ?></td>
-                      <td><?= $parts[2] ?></td>
+                      <td><?= $title ?></td>
+                      <td><?= $date ?></td>
+                      <td><?= $submit ?></td>
                       <td><a href="forms.html" class="btn btn-secondary">Review</td>
                     </tr>
                     <?php
                     }
-                    fclose($file_handle);
+                    fclose($file);
                     ?>
+
               </tbody>
             </table>
 
               <div class="contentList">
-                <div class="left">Showing 1-4 of 10</div>
-                  <div class="right">
-                    <a href="#">Previous</a>
-                    <a href="#">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    ...
-                    <a href="#">Next</a>
-                  </div>
-                </div>
+                <?php
+                $x = $count/2;
+                $y = ceil($x);
+                for($i = 1; $i < $y; $i++) {
+                  ?>
+                  <a href = ""><?= $i?></a>
+                <?php
+                }
+                ?>
               </div>
-
-              <!--
-              <div id="sideBar">
-                <div class="box">
-                  <div class="boxHead">
-                    <h2>Order By</h2>
-                  </div>
-                    <div class="boxContent">
-                      <div class="sort">
-                        <select class="field">
-                          <option value="">Title</option>
-                        </select>
-                        <select class="field">
-                          <option value="">Date</option>
-                        </select>
-                        <select class="field">
-                          <option value="">Submitter</option>
-                        </select>
-                      </div>
-                    </div>
-                </div>
-              </div>
-            -->
           </div>
       </div>
     </div>
