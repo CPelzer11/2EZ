@@ -18,9 +18,8 @@
         <h1>Student Green Fee</h1>
         <form class="form-horizontal" method="post">
             <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6">
-                Username:<input id="username" class="form-control" type="text" name="username" placeholder="Username" onclick="setTimeout(admincheck, 10)">
+                Username:<input id="username" class="form-control" type="text" name="username" placeholder="StarID" onclick="setTimeout(admincheck, 10)">
                 <br>
-                Password:<input class="form-control" type="password" name="pswd" placeholder="Password">
                 <button formaction="authenticate.php" class="login" type="submit" value="login">Login</button>
                 <button class="login" type="submit" value="admin">Login as Admin</button>
             </div>
