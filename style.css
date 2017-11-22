@@ -140,6 +140,12 @@ h1 {
   background-color: #DE0000;
 }
 
-#collapse1 {
-    width: 75%;
+.chart-scale{
+    padding-top: 2%;
+}
+
+.container{
+    background-color: gainsboro;
+    height: auto;
+    
 }

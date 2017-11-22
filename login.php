@@ -14,7 +14,7 @@
     <body>
 		
         <div id="main">
-        <img class="img-rounded img-responsive"src="images/banner.png" id="banner">
+        <img class="img-rounded img-responsive"src="images/banner2.png" id="banner">
         <h1>Student Green Fee</h1>
         <form class="form-horizontal" method="post">
             <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6">
