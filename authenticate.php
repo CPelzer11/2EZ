@@ -16,4 +16,5 @@
 			header("Location: login.php");
 		}
 		$query->close();
+		$dbconnect->close();
 	?>
