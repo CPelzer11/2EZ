@@ -61,7 +61,7 @@
               </thead>
               <tbody id="myTable">
 				<?php
-					$dbconnect = mysqli_connect('localhost', 'root', 'Tjriah_1204','cs344proj');
+					$dbconnect = mysqli_connect('localhost', 'x', 'x','x');
 					$find = "SELECT title, contact_name FROM project;";
 					$result= mysqli_query($dbconnect, $find);
 					if(mysqli_num_rows($result)>0){
