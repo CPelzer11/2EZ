@@ -8,7 +8,7 @@
 		$query->bind_result($u_name);
 		$check=$query->fetch();
 		if($check){
-			header("Location: index.html");
+			header("Location: index.php");
 		}
 		else{
 			session_start();
