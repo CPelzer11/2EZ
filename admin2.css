@@ -1,0 +1,58 @@
+body {
+    margin-top: 100px;
+    background-color: rgb(124, 164, 69);
+}
+
+#page-wrapper {
+    width: 100%;
+    padding: 0;
+    background-image: url('images/WSU_GreenFee.png');
+    background-color: white;
+    background-size: 500px;
+    background-position: 50% 10px;
+    background-repeat: no-repeat;
+}
+
+.navbar, #sideNav, th{
+    background-color: rgb(124, 164, 69);
+    color: white;
+}
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav li a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.side-nav li a {
+    width: 225px;
+}
+
+.side-nav li a:hover, .side-nav li a:focus {
+    background-color: white;
+}
+
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+    }
+
+    #wrapper {
+        padding-left: 225px;
+    }
+
+    #page-wrapper {
+        padding: 10px;
+    }
+
+    .side-nav {
+        position: fixed;
+        top: 51px;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+    }
+}

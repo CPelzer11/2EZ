@@ -1,0 +1,9 @@
+Proposal A : 12.02.12 : Jon : 01.23.12 : Admin1
+Proposal B : 09.29.16 : Bob : 01.23.12 : Admin2
+Proposal C : 03.23.13 : Jim : 01.23.12 : Admin3
+Proposal D : 12.11.13 : Tom : 01.23.12 : Admin1
+Proposal E : 05.03.15 : Jane : 01.23.12 : Admin2
+Proposal F : 10.03.12 : Clark : 01.23.13 : Admin3
+Proposal G : 12.02.12 : Jon : 01.23.12 : Admin1
+Proposal H : 09.29.16 : Bob : 11.09.12 : Admin2
+Proposal I : 02.01.16 : Bob : 04.13.12 : Admin3
