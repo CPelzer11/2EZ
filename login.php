@@ -21,7 +21,6 @@
                 Username:<input id="username" class="form-control" type="text" name="username" placeholder="StarID" onclick="setTimeout(admincheck, 10)">
                 <br>
                 <button formaction="authenticate.php" class="login" type="submit" value="login">Login</button>
-                <button class="login" type="submit" value="admin">Login as Admin</button>
             </div>
         </form>
             <img src="images/WSU_GreenFee.png" id="greenFee" class="img-responsive">
