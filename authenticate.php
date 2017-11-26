@@ -7,6 +7,8 @@
 		$query->bind_result($u_name);
 		$check=$query->fetch();//Check if query was successful
 		if($check){ //If success, is valid user
+			session_start(['cookie_lifetime'=>600]);
+			$_SESSION['logged']=true;
 			$query="SELECT id FROM user WHERE u_name='".$username."'";//if valid user, check if admin
 			$result=$dbconnect->query($query);
 			if($getid=$result->fetch_assoc()){

@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+	session_start();
+	if(!$_SESSION['logged']){
+	header("Location: login.php");
+}
+?>
   <head>
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -56,7 +61,7 @@
 
                     <tbody id="myTable">
                       <?php
-                        $dbconnect = mysqli_connect('localhost', 'x', 'x','x');
+                        $dbconnect = mysqli_connect('localhost', 'root', 'Tjriah_1204','cs344proj');
                         $find = "SELECT title, contact_name FROM project;";
                         $result= mysqli_query($dbconnect, $find);
                         if(mysqli_num_rows($result)>0){
@@ -70,7 +75,7 @@
                               <td>
                             <?php print($show["contact_name"]);?>
                               </td>
-                              <td><a href="forms.html" class="btn btn-secondary">Review</td>
+                              <td><a href="forms.php" class="btn btn-secondary">Review</td>
                           <?php
                             }//end while
                             }//end if

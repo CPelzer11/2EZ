@@ -1,4 +1,10 @@
 <!DOCTYPE HTML>
+<?php
+	session_start();
+	if(!$_SESSION['logged']){
+	header("Location: login.php");
+}
+?>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -23,7 +29,7 @@
                 $count = 1;
                 $in = true;
             
-                $conn = new mysqli("localhost", "root", "", "WEBDB");
+                $conn = new mysqli('localhost', 'root', 'Tjriah_1204','cs344proj');
                     
                     if ($conn->connect_error) {
                         die("Connection failed: " . $conn->connect_error);
