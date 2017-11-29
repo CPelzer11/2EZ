@@ -6,7 +6,7 @@ body {
 
 #main {
     background-color: gainsboro;
-    height: 600px;
+    height: 700px;
     
 }
 
@@ -148,4 +148,8 @@ h1 {
     background-color: gainsboro;
     height: auto;
     
+}
+
+#submission {
+    width: 20%;
 }

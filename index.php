@@ -60,8 +60,23 @@
                     </thead>
 
                     <tbody id="myTable">
+                        <tr>
+                            <td>
+                                2EZ
+                            </td>
+                            <td>
+                                12.09.16
+                            </td>
+                            <td>
+                                Gary Garyson
+                            </td>
+                            <td>
+                                <a href="forms.php" class="btn btn-secondary">Review
+                                </a>
+                            </td>
+                        </tr>
                       <?php
-                        $dbconnect = mysqli_connect('localhost', 'root', 'Tjriah_1204','cs344proj');
+                        $dbconnect = mysqli_connect('localhost', 'root', '','WEBDB');
                         $find = "SELECT title, contact_name FROM project;";
                         $result= mysqli_query($dbconnect, $find);
                         if(mysqli_num_rows($result)>0){
@@ -75,7 +90,7 @@
                               <td>
                             <?php print($show["contact_name"]);?>
                               </td>
-                              <td><a href="forms.php" class="btn btn-secondary">Review</td>
+                                <td><a href="forms.php" class="btn btn-secondary">Review</a></td>
                           <?php
                             }//end while
                             }//end if
@@ -87,7 +102,7 @@
 
               <div class="pagination">
                     <ul class="pagination">
-                      <?php
+                      <?/*php
                         $x = $count/2;
                         $y = ceil($x);
                         for($i = 1; $i < $y; $i++) {
@@ -95,7 +110,7 @@
                           <li class="page-item"><a class="page-link" href = ""><?= $i?></a></li>
                       <?php
                         }
-                      ?>
+                      */?>
                     </ul>
                   </div>
               </div>
