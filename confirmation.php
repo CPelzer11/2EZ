@@ -24,7 +24,7 @@
                         <a href="login.php" class="btn btn-secondary">Logout</a>
                     </td>
                     <td>
-                        <a href="index.php" class="btn btn-secondary">New Evaluation</a>
+                        <a href="index.php" class="btn btn-secondary">Home</a>
                     </td>
                 </tr>
             </table>
