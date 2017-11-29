@@ -48,6 +48,7 @@
                     </div>
 
                     <div id='mainBod'>
+                        <input type="text" id="myInput" placeholder="Search..." title="searching">
                         <table class="table table-hover">
                             <thead>
                                 <tr>
