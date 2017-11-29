@@ -30,7 +30,7 @@
                 $count = 1;
                 $in = true;
             
-                $conn = new mysqli('localhost', 'root', '','WEBDB');
+                $conn = new mysqli('localhost', 'root', '','cs344proj');
                     
                     if ($conn->connect_error) {
                         die("Connection failed: " . $conn->connect_error);

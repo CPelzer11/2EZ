@@ -60,23 +60,9 @@
                     </thead>
 
                     <tbody id="myTable">
-                        <tr>
-                            <td>
-                                2EZ
-                            </td>
-                            <td>
-                                12.09.16
-                            </td>
-                            <td>
-                                Gary Garyson
-                            </td>
-                            <td>
-                                <a href="forms.php" class="btn btn-secondary">Review
-                                </a>
-                            </td>
-                        </tr>
+                       
                       <?php
-                        $dbconnect = mysqli_connect('localhost', 'root', '','WEBDB');
+                        $dbconnect = mysqli_connect('localhost', 'root', '','cs344proj');
                         $find = "SELECT title, contact_name FROM project;";
                         $result= mysqli_query($dbconnect, $find);
                         if(mysqli_num_rows($result)>0){
@@ -90,11 +76,10 @@
                               <td>
                             <?php print($show["contact_name"]);?>
                               </td>
-<<<<<<< HEAD
+
                               <td><a href="forms.php" class="btn btn-secondary btn-outline-success" role="button">Review</a></td>
-=======
-                                <td><a href="forms.php" class="btn btn-secondary">Review</a></td>
->>>>>>> d8498b3b033f08288593b75867b643bb93d0a450
+
+                             
                           <?php
                             }//end while
                             }//end if
@@ -106,7 +91,8 @@
 
               <div class="pagination">
                     <ul class="pagination">
-                      <?/*php
+                      <?php
+						$count=4;
                         $x = $count/2;
                         $y = ceil($x);
                         for($i = 1; $i < $y; $i++) {
@@ -114,7 +100,7 @@
                           <li class="page-item"><a class="page-link" href = ""><?= $i?></a></li>
                       <?php
                         }
-                      */?>
+                      ?>
                     </ul>
                   </div>
               </div>

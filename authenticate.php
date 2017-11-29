@@ -1,5 +1,5 @@
 	<?php 
-		$dbconnect = mysqli_connect('localhost', 'x', 'x','x');
+		$dbconnect = mysqli_connect('localhost', 'root', '','cs344proj');
 		$query = $dbconnect->prepare("SELECT u_name FROM user WHERE u_name=?");
 		$query->bind_param("s",$username);//Prepare Query
 		$username=$_POST["username"];
