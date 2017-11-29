@@ -10,6 +10,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -29,7 +30,7 @@
                 $count = 1;
                 $in = true;
             
-                $conn = new mysqli('localhost', 'root', 'Tjriah_1204','cs344proj');
+                $conn = new mysqli('localhost', 'root', '','WEBDB');
                     
                     if ($conn->connect_error) {
                         die("Connection failed: " . $conn->connect_error);
@@ -53,7 +54,7 @@
                             </div>
                             <div id="collapse' . $count . '" class="panel-collapse collapse in">
                                 <div class="panel-body">
-                                    information about stuff
+                                    <textarea rows="4" cols="50" placeholder="Questions or Comments"></textarea>
                                         <div class="buttonContainer">
                                             <div class="row">
                                                 <div class="col-xs-12">
@@ -89,7 +90,7 @@
                             </div>
                             <div id="collapse' . $count . '" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    information about stuff
+                                    <textarea rows="4" cols="50" placeholder="Questions or Comments"></textarea>
                                         <div class="buttonContainer">
                                             <div class="row">
                                                 <div class="col-xs-12">
@@ -121,7 +122,17 @@
             </div>
             
              </div>
-            <button href="login.html" value="GoBack" type="button">Go Back</button>
+            <table>
+                <tr>
+                    <td>
+                        <a href="login.php" class="btn btn-secondary">Logout</a>
+                    </td>
+                    <td>
+                        <a href="confirmation.php" class="btn btn-secondary">Submit</a>
+                    </td>
+                </tr>
+            </table>
+
         </div>
     </body>
 </html>
