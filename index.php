@@ -75,7 +75,7 @@
                               <td>
                             <?php print($show["contact_name"]);?>
                               </td>
-                              <td><a href="forms.php" class="btn btn-secondary">Review</td>
+                              <td><a href="forms.php" class="btn btn-secondary btn-outline-success" role="button">Review</a></td>
                           <?php
                             }//end while
                             }//end if

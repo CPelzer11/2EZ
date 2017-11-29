@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-	session_start();
-	if(!$_SESSION['logged']){
-	header("Location: login.php");
-}
-?>
+
 <head>
     <meta charset="utf-8">
     <title>Green Committee Administrator</title>
@@ -34,7 +29,7 @@
                     <li>
                         <a href="admin.php">Proposal Reviews</a>
                     </li>
-                    <li>
+                    <li> 
                         <a href="users.php">Users</a>
                     </li>
                     <li>
@@ -49,19 +44,17 @@
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Proposal Reviewed</h1>
+                        <h1 class="page-header">Users</h1>
                     </div>
 
-                    <div>
-                        <input type="text" id="myInput" placeholder="Search..." title="searching">
-                        <table class="table table-bordered table-hover">
+                    <div id='mainBod'>
+                        <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>Title of Proposal</th>
-                                    <th>Date Posted</th>
-                                    <th>Posted by</th>
-                                    <th>Date Reviewed</th>
-                                    <th>Reviewed by</th>
+                                    <th>StarID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
                                     <th></th>
                                     <th></th>
                                   </tr>
@@ -69,21 +62,20 @@
 
                              <tbody id="myTable">
                               <?php
-                                $file = fopen("DB1.txt", "r");
+                                $file = fopen("DB2.txt", "r");
                                 $count = 0;
                                 while(!feof($file)){
                                   $inform = fgets($file);
                                   $count++;
-                                  list($title, $datePost, $postBy, $dateRev, $revBy) = explode(':', $inform);
+                                  list($starID, $name, $email, $role) = explode(':', $inform);
                                   ?>
                                   <tr>
-                                    <td><?= $title ?></td>
-                                    <td><?= $datePost ?></td>
-                                    <td><?= $postBy ?></td>
-                                    <td><?= $dateRev ?></td>
-                                    <td><?= $revBy ?></td>
-                                    <td><a href="#">Open</tdy>
-                                    <td><a href="#">Delete</td>
+                                    <td><?= $starID ?></td>
+                                    <td><?= $name ?></td>
+                                    <td><?= $email ?></td>
+                                    <td><?= $role ?></td>
+                                    <td><a href="#">Profile</a></td>
+                                    <td><a href="#">Remove</a></td>
                                   </tr>
                                   <?php
                                   }
