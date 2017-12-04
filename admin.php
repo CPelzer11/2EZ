@@ -2,9 +2,9 @@
 <html lang="en">
 <?php
 	session_start();
-	if(!$_SESSION['logged']){
+	if(!$_SESSION['admin']){
 	header("Location: login.php");
-}
+}	
 ?>
 <head>
     <meta charset="utf-8">

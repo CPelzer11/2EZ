@@ -8,7 +8,7 @@
 		$check=$query->fetch();//Check if query was successful
 		if($check){ //If success, is valid user
 			session_start(['cookie_lifetime'=>600]);
-			$_SESSION['logged']=true;
+			
 			$query="SELECT id FROM user WHERE u_name='".$username."'";//if valid user, check if admin
 			$result=$dbconnect->query($query);
 			if($getid=$result->fetch_assoc()){
@@ -16,9 +16,11 @@
 			}																		  //username
 			$check=$dbconnect->query($isadmin);
 			if($check->num_rows==1){//if we get a row back, match found, go to admin page
+				$_SESSION['admin']=true;
 				header("Location: admin.php");
 			}
 			else{
+				$_SESSION['logged']=true;
 				header("Location: index.php");//else go to committee member page
 			}
 		}
