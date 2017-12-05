@@ -2,7 +2,7 @@
 <?php
 	session_start();
 	if(!$_SESSION['logged']){
-	header("Location: login.php");
+	header("Location: index.php");
 }
 ?>
 <html>
@@ -30,7 +30,7 @@
                 $count = 1;
                 $in = true;
             
-                $conn = new mysqli('localhost', 'root', '','cs344proj');
+                $conn = mysqli_connect('localhost', 'root', '','cs344proj');
                     
                     if ($conn->connect_error) {
                         die("Connection failed: " . $conn->connect_error);
@@ -44,6 +44,30 @@
                         
                         $out = $result->fetch_assoc();
                         
+						if($count<10){
+							$query=$conn->prepare("Select answer, comment from answer where question_id='00".$count."' and project_id=(select id from project where title=? and contact_name=?)");
+						}
+						else{
+							$query=$conn->prepare("Select answer, comment from answer where question_id='0".$count."' and project_id=(select id from project where title=? and contact_name=?)");
+						}
+						$query->bind_param("ss",$title, $name);
+						$title=$_GET["title"];
+						$name=$_GET["contact_name"];
+						$query->execute();
+						$query->bind_result($col_title, $col_name);
+						$check=$query->fetch();
+						if($check AND $count<10){
+							$query="Select answer, comment from answer where question_id='00".$count."' and project_id=(select id from project where title='".$title."' and contact_name='".$name."')";
+							$answers=$conn->query($query);
+							$answerout=$answers->fetch_assoc();
+						}
+						else{
+							$query="Select answer, comment from answer where question_id='0".$count."' and project_id=(select id from project where title='".$title."' and contact_name='".$name."')";
+							$answers=$conn->query($query);
+							$answerout=$answers->fetch_assoc();
+						}
+						echo $answerout["answer"];
+						echo $answerout["comment"];
                         if($in){
                         echo
                         '<div class="panel panel-default">
@@ -56,7 +80,7 @@
                                 <div class="panel-body">
                                     <textarea rows="4" cols="50" placeholder="Questions or Comments"></textarea>
                                         <div class="buttonContainer">
-                                            <div class="row">
+                                            <div class="row">	
                                                 <div class="col-xs-12">
                                                     <div class="chart-scale">
                                                         <button class="btn btn-scale btn-scale-desc-1">1</button>
