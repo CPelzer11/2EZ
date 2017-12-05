@@ -56,7 +56,8 @@
 						$query->execute();
 						$query->bind_result($col_title, $col_name);
 						$check=$query->fetch();
-						if($check AND $count<10){
+						if($check){
+						if($count<10){
 							$query="Select answer, comment from answer where question_id='00".$count."' and project_id=(select id from project where title='".$title."' and contact_name='".$name."')";
 							$answers=$conn->query($query);
 							$answerout=$answers->fetch_assoc();
@@ -65,6 +66,10 @@
 							$query="Select answer, comment from answer where question_id='0".$count."' and project_id=(select id from project where title='".$title."' and contact_name='".$name."')";
 							$answers=$conn->query($query);
 							$answerout=$answers->fetch_assoc();
+						}
+						}
+						else{
+							header("Location: account.php");
 						}
 						echo $answerout["answer"];
 						echo $answerout["comment"];
