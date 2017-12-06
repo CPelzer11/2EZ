@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+	session_start();
+	if(!$_SESSION['admin']){
+	header("Location: index.php");
+}
+?>
 <head>
     <meta charset="utf-8">
     <title>Green Committee Administrator</title>

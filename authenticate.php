@@ -21,13 +21,13 @@
 			}
 			else{
 				$_SESSION['logged']=true;
-				header("Location: index.php");//else go to committee member page
+				header("Location: account.php");//else go to committee member page
 			}
 		}
 		else{//else, invalid user return to login screen
 			session_start();
 			$_SESSION['failed']="*Invalid Credentials";
-			header("Location: login.php");
+			header("Location: index.php");
 		}
 		$dbconnect->close();
 	?>

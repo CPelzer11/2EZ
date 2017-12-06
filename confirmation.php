@@ -1,5 +1,11 @@
 <!DOCTYPE HTML>
 <html>
+<?php
+	session_start();
+	if(!$_SESSION['logged']){
+	header("Location: index.php");
+}
+?>
 	
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

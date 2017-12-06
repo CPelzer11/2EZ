@@ -1,113 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<?php
-	session_start();
-	if(!$_SESSION['logged']){
-	header("Location: login.php");
-}
-?>
-  <head>
-    <meta charset="UTF-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="index.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="indStyle.css">
-    <title>Green Committee Page</title>
-  </head>
-
-  <body>
-    <nav class="navbar navbar-inverse navbar-toggleable-sm p-1">
-      <div class="container">
-        <a href="index.php" class="navbar-brand">Welcome Committee Member</a>
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a href="#" class="nav-link">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a href="login.php" class="nav-link">Logout</a>
-            </li>
-          </ul>
-      </div>
-    </nav>
-
-    <header class="text-black pt-2 pl-5">
-      <div class="container">
-        <div class="row">
-          <div>
-            <h1 >Proposal Review</h1>
-          </div>
-        </div>
-      </div>
-    </header>
-    <br>
-
-    <main>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-9">
-          <div class="card">
-            <div class="card-block">
-              <h4 class="text-center">Proposals</h4>
-                <input type="text" id="myInput" placeholder="Search..." title="searching">
-                  <table class="table table-hover">
-                    <thead class="thead">
-                      <tr>
-                        <th>Title</th>
-                        <th>Date Posted</th>
-                        <th>Submitted by</th>
-                        <th></th>
-                      </tr>
-                    </thead>
-
-                    <tbody id="myTable">
-                       
-                      <?php
-                        $dbconnect = mysqli_connect('localhost', 'root', '','cs344proj');
-                        $find = "SELECT title, contact_name FROM project;";
-                        $result= mysqli_query($dbconnect, $find);
-                        if(mysqli_num_rows($result)>0){
-                          while($show = mysqli_fetch_assoc($result)){
-                            ?>
-                            <tr>
-                              <td>
-                            <?php print($show["title"]);?>
-                              </td>
-                              <td>12.09.16</td>
-                              <td>
-                            <?php print($show["contact_name"]);?>
-                              </td>
-
-                              <td><a href="forms.php" class="btn btn-secondary btn-outline-success" role="button">Review</a></td>
-
-                             
-                          <?php
-                            }//end while
-                            }//end if
-                            mysqli_close($dbconnect);
-                          ?>
-                     </tr>
-                    </tbody>
-            </table>
-
-              <div class="pagination">
-                    <ul class="pagination">
-                      <?php
-						$count=4;
-                        $x = $count/2;
-                        $y = ceil($x);
-                        for($i = 1; $i < $y; $i++) {
-                      ?>
-                          <li class="page-item"><a class="page-link" href = ""><?= $i?></a></li>
-                      <?php
-                        }
-                      ?>
-                    </ul>
-                  </div>
-              </div>
+<!DOCTYPE HTML>
+<html>
+	
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="login.js"></script>
+        <title>Homepage</title>
+    </head>
+    <body>
+		
+        <div id="main">
+        <img class="img-rounded img-responsive"src="images/banner2.png" id="banner">
+        <h1>Student Green Fee</h1>
+        <form class="form-horizontal" method="post">
+            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6">
+                Username:<input id="username" class="form-control" type="text" name="username" placeholder="StarID" onclick="setTimeout(admincheck, 10)">
+                <br>
+                <button formaction="authenticate.php" class="login" type="submit" value="login">Login</button>
             </div>
-          </div>
+        </form>
+            <img src="images/WSU_GreenFee.png" id="greenFee" class="img-responsive">
+            <?php session_start();?>
+				<p id="test"> 
+				<?php
+				session_destroy();
+				if(isset($_SESSION['failed'])){
+					print($_SESSION['failed']);
+				}
+				?>
+				</p>
+			
         </div>
-      </div>
-    </main>
-  </body>
+    </body>
 </html>
