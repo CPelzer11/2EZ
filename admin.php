@@ -20,7 +20,7 @@
 
         <nav class="navbar navbar-fixed-top">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">Welcome Administrator</a>
+                <a class="navbar-brand" href="admin.php">Welcome Administrator</a>
             </div>
 
             <ul class="nav navbar-right top-nav">
@@ -36,9 +36,6 @@
                     </li>
                     <li>
                         <a href="users.php">Users</a>
-                    </li>
-                    <li>
-                        <a href="#">Profile</a>
                     </li>
                 </ul>
             </div>
@@ -58,36 +55,33 @@
                             <thead>
                                 <tr>
                                     <th>Title of Proposal</th>
-                                    <th>Date Posted</th>
                                     <th>Posted by</th>
-                                    <th>Date Reviewed</th>
+                                    <th>Advised by</th>
+                                    <th>Budget Amount</th>
                                     <th>Reviewed by</th>
-                                    <th></th>
-                                    <th></th>
                                   </tr>
                             </thead>
 
                              <tbody id="myTable">
                               <?php
-                                $file = fopen("DB1.txt", "r");
-                                $count = 0;
-                                while(!feof($file)){
-                                  $inform = fgets($file);
-                                  $count++;
-                                  list($title, $datePost, $postBy, $dateRev, $revBy) = explode(':', $inform);
-                                  ?>
-                                  <tr>
-                                    <td><?= $title ?></td>
-                                    <td><?= $datePost ?></td>
-                                    <td><?= $postBy ?></td>
-                                    <td><?= $dateRev ?></td>
-                                    <td><?= $revBy ?></td>
-                                    <td><a href="#">Open</tdy>
-                                    <td><a href="#">Delete</td>
-                                  </tr>
-                                  <?php
-                                  }
-                                  fclose($file);
+                                $dbconnect = mysqli_connect('localhost', 'root', '','cs344proj');
+                                $find = "SELECT distinct title, contact_name, r_name, advisor_name, amount 
+                                FROM project natural join review 
+                                WHERE id = project_id ;";
+                                $result= mysqli_query($dbconnect, $find);
+                                 if(mysqli_num_rows($result)>0){
+                                    while($project = mysqli_fetch_assoc($result)){
+                                    $count = 1;
+                                     echo '
+                                      <tr>
+                                        <td>' . $project["title"] . '</td>
+                                        <td>' . $project["contact_name"] . '</td>
+                                        <td>' . $project["advisor_name"] . '</td>
+                                        <td>' . $project["amount"] . '</td>
+                                        <td>' . $project["r_name"] . '</td>
+                                      </tr>';
+                                    }
+                                 }
                                   ?>
                             </tbody>
                         </table>

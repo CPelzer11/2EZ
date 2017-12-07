@@ -20,7 +20,7 @@
 
         <nav class="navbar navbar-fixed-top">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">Welcome Administrator</a>
+                <a class="navbar-brand" href="admin.php">Welcome Administrator</a>
             </div>
 
             <ul class="nav navbar-right top-nav">
@@ -36,9 +36,6 @@
                     </li>
                     <li> 
                         <a href="users.php">Users</a>
-                    </li>
-                    <li>
-                        <a href="#">Profile</a>
                     </li>
                 </ul>
             </div>
@@ -61,31 +58,26 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Role</th>
-                                    <th></th>
-                                    <th></th>
                                   </tr>
                             </thead>
 
                              <tbody id="myTable">
                               <?php
-                                $file = fopen("DB2.txt", "r");
-                                $count = 0;
-                                while(!feof($file)){
-                                  $inform = fgets($file);
-                                  $count++;
-                                  list($starID, $name, $email, $role) = explode(':', $inform);
-                                  ?>
-                                  <tr>
-                                    <td><?= $starID ?></td>
-                                    <td><?= $name ?></td>
-                                    <td><?= $email ?></td>
-                                    <td><?= $role ?></td>
-                                    <td><a href="#">Profile</a></td>
-                                    <td><a href="#">Remove</a></td>
-                                  </tr>
-                                  <?php
-                                  }
-                                  fclose($file);
+                                $dbconnect = mysqli_connect('localhost', 'root', '','cs344proj');
+                                $find = "SELECT id,u_name,email,status From user;";
+                                $result= mysqli_query($dbconnect, $find);
+                                 if(mysqli_num_rows($result)>0){
+                                    while($project = mysqli_fetch_assoc($result)){
+                                    $count = 0;
+                                     echo '
+                                      <tr>
+                                        <td>' . $project["id"] . '</td>
+                                        <td>' . $project["u_name"] . '</td>
+                                        <td>' . $project["email"] . '</td>
+                                        <td>' . $project["status"] . '</td>
+                                      </tr>';
+                                    }
+                                 }
                                   ?>
                             </tbody>
                         </table>
