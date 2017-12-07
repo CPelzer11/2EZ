@@ -37,9 +37,6 @@
                     <li>
                         <a href="users.php">Users</a>
                     </li>
-                    <li>
-                        <a href="#">Profile</a>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -58,17 +55,35 @@
                             <thead>
                                 <tr>
                                     <th>Title of Proposal</th>
-                                    <th>Date Posted</th>
                                     <th>Posted by</th>
-                                    <th>Date Reviewed</th>
+                                    <th>Advised by</th>
+                                    <th>Budget Amount</th>
                                     <th>Reviewed by</th>
-                                    <th></th>
-                                    <th></th>
                                   </tr>
                             </thead>
 
                              <tbody id="myTable">
                               <?php
+<<<<<<< HEAD
+                                $dbconnect = mysqli_connect('localhost', 'root', '','cs344proj');
+                                $find = "SELECT distinct title, contact_name, r_name, advisor_name, amount 
+                                FROM project natural join review 
+                                WHERE id = project_id ;";
+                                $result= mysqli_query($dbconnect, $find);
+                                 if(mysqli_num_rows($result)>0){
+                                    while($project = mysqli_fetch_assoc($result)){
+                                    $count = 1;
+                                     echo '
+                                      <tr>
+                                        <td>' . $project["title"] . '</td>
+                                        <td>' . $project["contact_name"] . '</td>
+                                        <td>' . $project["advisor_name"] . '</td>
+                                        <td>' . $project["amount"] . '</td>
+                                        <td>' . $project["r_name"] . '</td>
+                                      </tr>';
+                                    }
+                                 }
+=======
                                 $file = fopen("db/DB1.txt", "r");
                                 $count = 0;
                                 while(!feof($file)){
@@ -88,6 +103,7 @@
                                   <?php
                                   }
                                   fclose($file);
+>>>>>>> ee32dfd8f1b85bce42b14fa33c5d44b56b2702f2
                                   ?>
                             </tbody>
                         </table>

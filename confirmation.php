@@ -5,6 +5,33 @@
 	if(!$_SESSION['logged']){
 	header("Location: index.php");
 }
+    
+    $count = 1;
+    while($count < 10){ 
+       
+    $output = $_POST["text" . $count];
+    $out2 = $_POST["button" . $count];
+        
+    $dbconnect = mysqli_connect('localhost', 'root', '','cs344proj');
+    $sql = "INSERT INTO review (`project_id`, `user_id`, `r_name`, `affiliation`, `comments`, `completed`, `question_id`) VALUES ('" . $_SESSION['project_id'] . "','" . $_SESSION['r_id'] . "','" . $_SESSION['r_name'] . "','" . $_SESSION['r_affiliation'] . "','" . $output . $out2 . "','1','00" . $count . "')";
+    
+    $count = $count + 1;
+        
+    }
+    while($count < 13){ 
+       
+    $output = $_POST["text" . $count];
+    $out2 = $_POST["button" . $count];
+        
+    $dbconnect = mysqli_connect('localhost', 'root', '','cs344proj');
+    $sql = "INSERT INTO review (`project_id`, `user_id`, `r_name`, `affiliation`, `comments`, `completed`, `question_id`) VALUES ('" . $_SESSION['project_id'] . "','" . $_SESSION['r_id'] . "','" . $_SESSION['r_name'] . "','" . $_SESSION['r_affiliation'] . "','" . $output . $out2 . "','1','0" . $count . "')";
+    
+    $count = $count + 1;
+        
+    }
+    
+    
+    
 ?>
 	
     <head>
@@ -23,7 +50,7 @@
         <div id="main">
             <img class="img-rounded img-responsive"src="images/banner2.png" id="banner">
             <h1>Successful Submission!</h1>
-            <h4 id="submission">Your evaluation has been successfully submitted, would you like to fill out another?</h4>
+            <h3 id="submission">Your evaluation has been successfully submitted, would you like to fill out another?</h3>
             <table>
                 <tr>
                     <td>

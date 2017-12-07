@@ -20,7 +20,11 @@
 
         <nav class="navbar navbar-fixed-top">
             <div class="navbar-header">
+<<<<<<< HEAD
+                <a class="navbar-brand" href="admin.php">Welcome Administrator</a>
+=======
                 <a class="navbar-brand" href="users.php">Welcome Administrator</a>
+>>>>>>> ee32dfd8f1b85bce42b14fa33c5d44b56b2702f2
             </div>
 
             <ul class="nav navbar-right top-nav">
@@ -36,9 +40,6 @@
                     </li>
                     <li> 
                         <a href="users.php">Users</a>
-                    </li>
-                    <li>
-                        <a href="#">Profile</a>
                     </li>
                 </ul>
             </div>
@@ -61,13 +62,28 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Role</th>
-                                    <th></th>
-                                    <th></th>
                                   </tr>
                             </thead>
 
                              <tbody id="myTable">
                               <?php
+<<<<<<< HEAD
+                                $dbconnect = mysqli_connect('localhost', 'root', '','cs344proj');
+                                $find = "SELECT id,u_name,email,status From user;";
+                                $result= mysqli_query($dbconnect, $find);
+                                 if(mysqli_num_rows($result)>0){
+                                    while($project = mysqli_fetch_assoc($result)){
+                                    $count = 0;
+                                     echo '
+                                      <tr>
+                                        <td>' . $project["id"] . '</td>
+                                        <td>' . $project["u_name"] . '</td>
+                                        <td>' . $project["email"] . '</td>
+                                        <td>' . $project["status"] . '</td>
+                                      </tr>';
+                                    }
+                                 }
+=======
                                 $file = fopen("db/DB2.txt", "r");
                                 $count = 0;
                                 while(!feof($file)){
@@ -86,6 +102,7 @@
                                   <?php
                                   }
                                   fclose($file);
+>>>>>>> ee32dfd8f1b85bce42b14fa33c5d44b56b2702f2
                                   ?>
                             </tbody>
                         </table>
