@@ -20,7 +20,7 @@
 
         <nav class="navbar navbar-fixed-top">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">Welcome Administrator</a>
+                <a class="navbar-brand" href="admin.php">Welcome Administrator</a>
             </div>
 
             <ul class="nav navbar-right top-nav">
