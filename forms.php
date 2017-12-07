@@ -154,7 +154,7 @@
             <table>
                 <tr>
                     <td>
-                        <a href="login.php" class="btn btn-secondary">Logout</a>
+                        <a href="index.php" class="btn btn-secondary">Logout</a>
                     </td>
                     <td>
                         <a href="confirmation.php" class="btn btn-secondary">Submit</a>

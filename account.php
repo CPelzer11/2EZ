@@ -21,9 +21,6 @@
         <a href="account.php" class="navbar-brand">Welcome Committee Member</a>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a href="#" class="nav-link">Profile</a>
-            </li>
-            <li class="nav-item">
               <a href="index.php" class="nav-link">Logout</a>
             </li>
           </ul>
