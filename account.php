@@ -9,22 +9,22 @@
   <head>
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="index.js" type="text/javascript"></script>
+    <script src="account.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="indStyle.css">
+    <link rel="stylesheet" href="css/accStyle.css">
     <title>Green Committee Page</title>
   </head>
 
   <body>
     <nav class="navbar navbar-inverse navbar-toggleable-sm p-1">
       <div class="container">
-        <a href="index.php" class="navbar-brand">Welcome Committee Member</a>
+        <a href="account.php" class="navbar-brand">Welcome Committee Member</a>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a href="#" class="nav-link">Profile</a>
             </li>
             <li class="nav-item">
-              <a href="login.php" class="nav-link">Logout</a>
+              <a href="index.php" class="nav-link">Logout</a>
             </li>
           </ul>
       </div>

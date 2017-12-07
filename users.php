@@ -10,9 +10,9 @@
     <meta charset="utf-8">
     <title>Green Committee Administrator</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="index.js" type="text/javascript"></script>
+    <script src="account.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="admin.css" rel="stylesheet">
+    <link href="css/admin.css" rel="stylesheet">
 </head>
 
 <body>
@@ -20,12 +20,16 @@
 
         <nav class="navbar navbar-fixed-top">
             <div class="navbar-header">
+<<<<<<< HEAD
                 <a class="navbar-brand" href="admin.php">Welcome Administrator</a>
+=======
+                <a class="navbar-brand" href="users.php">Welcome Administrator</a>
+>>>>>>> ee32dfd8f1b85bce42b14fa33c5d44b56b2702f2
             </div>
 
             <ul class="nav navbar-right top-nav">
                 <li>
-                    <a href="login.php">Logout</a>
+                    <a href="index.php">Logout</a>
                 </li>
             </ul>
 
@@ -63,6 +67,7 @@
 
                              <tbody id="myTable">
                               <?php
+<<<<<<< HEAD
                                 $dbconnect = mysqli_connect('localhost', 'root', '','cs344proj');
                                 $find = "SELECT id,u_name,email,status From user;";
                                 $result= mysqli_query($dbconnect, $find);
@@ -78,6 +83,26 @@
                                       </tr>';
                                     }
                                  }
+=======
+                                $file = fopen("db/DB2.txt", "r");
+                                $count = 0;
+                                while(!feof($file)){
+                                  $inform = fgets($file);
+                                  $count++;
+                                  list($starID, $name, $email, $role) = explode(':', $inform);
+                                  ?>
+                                  <tr>
+                                    <td><?= $starID ?></td>
+                                    <td><?= $name ?></td>
+                                    <td><?= $email ?></td>
+                                    <td><?= $role ?></td>
+                                    <td><a href="#">Profile</a></td>
+                                    <td><a href="#">Remove</a></td>
+                                  </tr>
+                                  <?php
+                                  }
+                                  fclose($file);
+>>>>>>> ee32dfd8f1b85bce42b14fa33c5d44b56b2702f2
                                   ?>
                             </tbody>
                         </table>
