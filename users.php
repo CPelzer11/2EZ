@@ -10,9 +10,9 @@
     <meta charset="utf-8">
     <title>Green Committee Administrator</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="index.js" type="text/javascript"></script>
+    <script src="account.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="admin.css" rel="stylesheet">
+    <link href="css/admin.css" rel="stylesheet">
 </head>
 
 <body>
@@ -25,7 +25,7 @@
 
             <ul class="nav navbar-right top-nav">
                 <li>
-                    <a href="login.php">Logout</a>
+                    <a href="index.php">Logout</a>
                 </li>
             </ul>
 
@@ -68,7 +68,7 @@
 
                              <tbody id="myTable">
                               <?php
-                                $file = fopen("DB2.txt", "r");
+                                $file = fopen("db/DB2.txt", "r");
                                 $count = 0;
                                 while(!feof($file)){
                                   $inform = fgets($file);
