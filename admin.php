@@ -8,49 +8,46 @@
 ?>
 <head>
     <meta charset="utf-8">
-    <title>Green Committee Administrator</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="account.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/admin.css" rel="stylesheet">
+    <title>Green Committee Administrator</title>
 </head>
 
 <body>
     <div id="wrapper">
+      <nav class="navbar navbar-fixed-top">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="admin.php">Welcome Administrator</a>
+        </div>
 
-        <nav class="navbar navbar-fixed-top">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="admin.php">Welcome Administrator</a>
-            </div>
+        <ul class="nav navbar-right top-nav">
+          <li>
+            <a href="index.php">Logout</a>
+          </li>
+        </ul>
 
-            <ul class="nav navbar-right top-nav">
-                <li>
-                    <a href="index.php">Logout</a>
-                </li>
-            </ul>
-
-            <div class="collapse navbar-collapse">
-                <ul id="sideNav" class="nav navbar-nav side-nav">
-                    <li>
-                        <a href="admin.php">Proposal Reviews</a>
-                    </li>
-                    <li>
-                        <a href="users.php">Users</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <div class="collapse navbar-collapse">
+          <ul id="sideNav" class="nav navbar-nav side-nav">
+            <li>
+              <a href="admin.php">Proposal Reviews</a>
+            </li>
+            <li>
+              <a href="users.php">Users</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
         <div id="page-wrapper">
             <div class="container-fluid">
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">Proposal Reviewed</h1>
-                    </div>
+              <div class="col-lg-12">
+                  <h1 class="page-header">Proposal Reviewed</h1>
+              </div>
 
                     <div>
-                        <input type="text" id="myInput" placeholder="Search..." title="searching">
+                        <input type="text" id="input" placeholder="Search..." title="searching">
                         <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
@@ -62,7 +59,7 @@
                                   </tr>
                             </thead>
 
-                             <tbody id="myTable">
+                             <tbody id="tab">
                               <?php
 
                                 $dbconnect = mysqli_connect('localhost', 'root', '','cs344proj');
@@ -95,7 +92,7 @@
                         <div class="pagination">
                             <ul class="pagination">
                               <?php
-                                $x = $count/2;
+                                $x = 4/2;
                                 $y = ceil($x);
                                 for($i = 1; $i < $y; $i++) {
                               ?>
@@ -106,10 +103,10 @@
                             </ul>
                         </div>
                     </div>
+                    <img src="images/WSU_GreenFee.png">
                 </div>
             </div>
         </div>
-    </div>
 </body>
 
 </html>

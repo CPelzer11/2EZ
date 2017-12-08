@@ -45,7 +45,7 @@
           <div class="card">
             <div class="card-block">
               <h4 class="text-center">Proposals</h4>
-                <input type="text" id="myInput" placeholder="Search..." title="searching">
+                <input type="text" id="input" placeholder="Search..." title="searching">
                   <table class="table table-hover">
                     <thead class="thead">
                       <tr>
@@ -56,7 +56,7 @@
                       </tr>
                     </thead>
 
-                    <tbody id="myTable">
+                    <tbody id="tab">
                        
                       <?php
                         $dbconnect = mysqli_connect('localhost', 'root', '','cs344proj');
