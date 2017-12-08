@@ -72,7 +72,7 @@
                                     while($project = mysqli_fetch_assoc($result)){
 										$title=str_replace(' ', '%20', $project["title"]);
 										$reviewer=$project["r_name"];
-										$link="forms.php?title=".$title."&r_name=".$reviewer;
+										$link="reviews.php?title=".$title."&r_name=".$reviewer;
                                     $count = 1;
                                      echo '
                                       <tr>
