@@ -8,11 +8,11 @@
 ?>
 <head>
     <meta charset="utf-8">
-    <title>Green Committee Administrator</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="account.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/admin.css" rel="stylesheet">
+    <title>Green Committee Administrator</title>
 </head>
 
 <body>
@@ -47,14 +47,12 @@
 
         <div id="page-wrapper">
             <div class="container-fluid">
-                <!-- Page Heading -->
-                <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">Users</h1>
                     </div>
 
                     <div id='mainBod'>
-                        <input type="text" id="myInput" placeholder="Search..." title="searching">
+                        <input type="text" id="input" placeholder="Search..." title="searching">
                         <table class="table table-hover">
                             <thead>
                                 <tr>
@@ -62,10 +60,10 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Role</th>
-                                  </tr>
+                                </tr>
                             </thead>
 
-                             <tbody id="myTable">
+                             <tbody id="tab">
                               <?php
 <<<<<<< HEAD
                                 $dbconnect = mysqli_connect('localhost', 'root', '','cs344proj');
@@ -96,8 +94,6 @@
                                     <td><?= $name ?></td>
                                     <td><?= $email ?></td>
                                     <td><?= $role ?></td>
-                                    <td><a href="#">Profile</a></td>
-                                    <td><a href="#">Remove</a></td>
                                   </tr>
                                   <?php
                                   }
@@ -121,10 +117,10 @@
                             </ul>
                         </div>
                     </div>
+                    <img src="images/WSU_GreenFee.png">
                 </div>
             </div>
         </div>
-    </div>
 </body>
 
 </html>

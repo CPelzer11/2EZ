@@ -10,8 +10,8 @@
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="account.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/accStyle.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" rel="stylesheet">
+    <link href="css/accStyle.css" rel="stylesheet">
     <title>Green Committee Page</title>
   </head>
 
@@ -45,7 +45,7 @@
           <div class="card">
             <div class="card-block">
               <h4 class="text-center">Proposals</h4>
-                <input type="text" id="myInput" placeholder="Search..." title="searching">
+                <input type="text" id="input" placeholder="Search..." title="searching">
                   <table class="table table-hover">
                     <thead class="thead">
                       <tr>
@@ -56,7 +56,7 @@
                       </tr>
                     </thead>
 
-                    <tbody id="myTable">
+                    <tbody id="tab">
                        
                       <?php
                         $dbconnect = mysqli_connect('localhost', 'root', '','cs344proj');
