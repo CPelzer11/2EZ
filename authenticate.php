@@ -27,7 +27,7 @@
                 $_SESSION['r_id']=$user['id'];
                 $_SESSION['r_name']=$user['u_name'];
                 $_SESSION['r_affiliation']=$user['campus_affiliation'];
-				header("Location: account.php");//else go to committee member page
+				header("Location: reviewer.php");//else go to committee member page
 			}
 		}
 		else{//else, invalid user return to login screen

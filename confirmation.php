@@ -57,7 +57,7 @@
                         <a href="index.php" class="btn btn-secondary">Logout</a>
                     </td>
                     <td>
-                        <a href="account.php" class="btn btn-secondary">Home</a>
+                        <a href="reviewer.php" class="btn btn-secondary">Home</a>
                     </td>
                 </tr>
             </table>

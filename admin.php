@@ -64,14 +64,18 @@
 
                              <tbody id="myTable">
                               <?php
-<<<<<<< HEAD
+
                                 $dbconnect = mysqli_connect('localhost', 'root', '','cs344proj');
                                 $find = "SELECT distinct title, contact_name, r_name, advisor_name, amount 
-                                FROM project natural join review 
+                                FROM project inner join review 
                                 WHERE id = project_id ;";
+								
                                 $result= mysqli_query($dbconnect, $find);
                                  if(mysqli_num_rows($result)>0){
                                     while($project = mysqli_fetch_assoc($result)){
+										$title=str_replace(' ', '%20', $project["title"]);
+										$reviewer=$project["r_name"];
+										$link="forms.php?title=".$title."&r_name=".$reviewer;
                                     $count = 1;
                                      echo '
                                       <tr>
@@ -80,31 +84,11 @@
                                         <td>' . $project["advisor_name"] . '</td>
                                         <td>' . $project["amount"] . '</td>
                                         <td>' . $project["r_name"] . '</td>
+										<td><a href="'.$link.'">Open</a></td>
                                       </tr>';
                                     }
                                  }
-=======
-                                $file = fopen("db/DB1.txt", "r");
-                                $count = 0;
-                                while(!feof($file)){
-                                  $inform = fgets($file);
-                                  $count++;
-                                  list($title, $datePost, $postBy, $dateRev, $revBy) = explode(':', $inform);
-                                  ?>
-                                  <tr>
-                                    <td><?= $title ?></td>
-                                    <td><?= $datePost ?></td>
-                                    <td><?= $postBy ?></td>
-                                    <td><?= $dateRev ?></td>
-                                    <td><?= $revBy ?></td>
-                                    <td><a href="#">Open</tdy>
-                                    <td><a href="#">Delete</td>
-                                  </tr>
-                                  <?php
-                                  }
-                                  fclose($file);
->>>>>>> ee32dfd8f1b85bce42b14fa33c5d44b56b2702f2
-                                  ?>
+								?>
                             </tbody>
                         </table>
 

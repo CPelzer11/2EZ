@@ -2,8 +2,8 @@
 <?php
 	session_start();
 	if(!$_SESSION['logged']){
-	header("Location: index.php");
-}
+		header("Location: index.php");
+	}
 ?>
 <html>
     <head>
@@ -71,7 +71,7 @@
                                 }
                                 }
                                 else{
-                                    header("Location: account.php");
+                                    header("Location: reviwer.php");
                                 }
                                 if($in){
                                 echo
@@ -160,7 +160,7 @@
                 $i = $i + 1;
                 }
             ?>
-<<<<<<< HEAD
+
             </div>
             
              </div>
@@ -175,10 +175,8 @@
                 </tr>
             </table>
 
-=======
                 <input type="submit" id="submit">
             </form>
->>>>>>> edb72ed5667961e557ce8e0a932ef7953b6e1378
         </div>
     </body>
 </html>
